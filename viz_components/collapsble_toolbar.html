@@ -1,0 +1,24 @@
+<!-- collapsble_toolbar -->
+
+<link rel="import" href="../bower_components/core-media-query/core-media-query.html">
+<dom-module id="collapsble_toolbar">
+
+<template is="dom-bind">
+	<core-media-query 
+		query="max-width:600px"
+		queryMatches="{{smallScreen}}">
+	</core-media-query>
+</template>
+    <script>
+      Polymer({
+        is: 'collapsble_toolbar',
+		properties: {
+			query:{
+				type:String,
+				value:'max-width:600px'
+			}
+		}
+      });
+    </script>
+
+</dom-module>
