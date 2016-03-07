@@ -18,9 +18,26 @@ var loadWinWindowTools = function(){
 	var gui = require('nw.gui');
 	var win = gui.Window.get();
 	var menu = new gui.Menu({'type': 'menubar'});
-	menu.append(new gui.MenuItem({ label: 'File' }));
-	menu.append(new gui.MenuItem({ label: 'Tools' }));
-	menu.append(new gui.MenuItem({ label: 'About' }));
+	var File_menuitems = new gui.Menu();
+	File_menuitems.append(new gui.MenuItem({ label: 'New' }));
+	File_menuitems.append(new gui.MenuItem({ label: 'Open' }));
+	File_menuitems.append(new gui.MenuItem({ label: 'Save' }));
+	var Edit_menuitems = new gui.Menu();
+	Edit_menuitems.append(new gui.MenuItem({ label: 'Undo' }));
+	Edit_menuitems.append(new gui.MenuItem({ label: 'Redo' }));
+	Edit_menuitems.append(new gui.MenuItem({ label: 'Cut' }));
+	Edit_menuitems.append(new gui.MenuItem({ label: 'Copy' }));
+	Edit_menuitems.append(new gui.MenuItem({ label: 'Paste' }));
+	var Tools_menuitems = new gui.Menu();
+	Tools_menuitems.append(new gui.MenuItem({ label: 'R' }));
+	Tools_menuitems.append(new gui.MenuItem({ label: 'Python' }));
+	Tools_menuitems.append(new gui.MenuItem({ label: 'Java' }));
+	var About_menuitems = new gui.Menu();
+	About_menuitems.append(new gui.MenuItem({ label: 'About RTP Visualization platorm' }));
+	menu.append(new gui.MenuItem({ label: 'File' ,submenu: File_menuitems}));
+	menu.append(new gui.MenuItem({ label: 'Edit',submenu:Edit_menuitems  }));
+	menu.append(new gui.MenuItem({ label: 'Tools',submenu:Tools_menuitems  }));
+	menu.append(new gui.MenuItem({ label: 'About' ,submenu: About_menuitems}));
 	win.menu = menu;
 }
 
@@ -29,13 +46,30 @@ var loadDarwinWindowTools = function(){
 	var gui = require('nw.gui');
 	var win = gui.Window.get();
 	var menu = new gui.Menu({'type': 'menubar'});
-	menu.createMacBuiltin('RTPVizPlatform',{
+	menu.createMacBuiltin('RTP Visualization Platform',{
 		hideEdit: true,
 		hideWindow: true
 	});
-	menu.append(new gui.MenuItem({ label: 'File' }));
-	menu.append(new gui.MenuItem({ label: 'Tools' }));
-	menu.append(new gui.MenuItem({ label: 'About' }));
+	var File_menuitems = new gui.Menu();
+	File_menuitems.append(new gui.MenuItem({ label: 'New' }));
+	File_menuitems.append(new gui.MenuItem({ label: 'Open' }));
+	File_menuitems.append(new gui.MenuItem({ label: 'Save' }));
+	var Edit_menuitems = new gui.Menu();
+	Edit_menuitems.append(new gui.MenuItem({ label: 'Undo' }));
+	Edit_menuitems.append(new gui.MenuItem({ label: 'Redo' }));
+	Edit_menuitems.append(new gui.MenuItem({ label: 'Cut' }));
+	Edit_menuitems.append(new gui.MenuItem({ label: 'Copy' }));
+	Edit_menuitems.append(new gui.MenuItem({ label: 'Paste' }));
+	var Tools_menuitems = new gui.Menu();
+	Tools_menuitems.append(new gui.MenuItem({ label: 'R' }));
+	Tools_menuitems.append(new gui.MenuItem({ label: 'Python' }));
+	Tools_menuitems.append(new gui.MenuItem({ label: 'Java' }));
+	var About_menuitems = new gui.Menu();
+	About_menuitems.append(new gui.MenuItem({ label: 'About RTP Visualization platorm' }));
+	menu.append(new gui.MenuItem({ label: 'File' ,submenu: File_menuitems}));
+	menu.append(new gui.MenuItem({ label: 'Edit',submenu:Edit_menuitems  }));
+	menu.append(new gui.MenuItem({ label: 'Tools',submenu:Tools_menuitems  }));
+	menu.append(new gui.MenuItem({ label: 'About' ,submenu: About_menuitems}));
 	win.menu = menu;
 }
 
