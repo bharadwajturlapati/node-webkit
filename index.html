@@ -15,13 +15,14 @@
 	<link rel= "import" href="bower_components/iron-media-query/iron-media-query.html">
 	<link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
 	<link href="bower_components/iron-icons/iron-icons.html" rel="import">
+	<link href="viz_components/leftnavigation.html" rel="import">
+	<link href="viz_components/rightnavigation.html" rel="import">
+	<link href="viz_components/header-main.html" rel="import">
 	<link rel="stylesheet" href="css/root.css">
   </head>
   <body>
-  <paper-toolbar id= "header">
-		<paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-		<div class="title">Visual Data Studio</div>
-		<paper-icon-button icon="refresh"></paper-icon-button>
-	</paper-toolbar>
+	<header-main></header-main>
+	<left-view></left-view>
+	<right-view></right-view>
   </body>
 </html>

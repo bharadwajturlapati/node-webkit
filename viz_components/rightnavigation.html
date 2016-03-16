@@ -2,54 +2,26 @@
 <dom-module id="right-view">
 
 <template is="dom-bind">
-<iron-media-query 
-	query="{{query}}"
-	query-matches="{{smallScreen}}">
-</iron-media-query>
-<template is="dom-if" if="{{smallScreen}}">
-<style>/*
-paper-icon-button{
-	--paper-icon-button:{
-	position: absolute;
-	top: 10px;
-	color:white;
-	float:right;
-	}
-}*/
-</style>
-</template>
-<template is="dom-if" if="{{!smallScreen}}">
 <style>
-paper-menu{
-
---paper-menu:{
-	width:256px;
-	height:100%;
-	float:right;
-}
-
-}
+	.right-view{
+		list-style-type: none;
+	}
+	.right-main{
+		float:right;
+	}
 </style>
- <paper-menu>
-			<paper-item><paper-icon-button icon="home"></paper-icon-button>Home</paper-item>
-			<paper-item><paper-icon-button icon="inbox"></paper-icon-button>Inbox</paper-item>
-			<paper-item><paper-icon-button icon="delete"></paper-icon-button>Trash</paper-item>
-			<paper-item><paper-icon-button icon="error"></paper-icon-button>Spam</paper-item>
-			<paper-item><paper-icon-button icon="question-answer"></paper-icon-button>Forums</paper-item>
-			<paper-item><paper-icon-button icon="feedback"></paper-icon-button>Updates</paper-item>
-			<paper-item><paper-icon-button icon="accessibility"></paper-icon-button>promos</paper-item>
-			<paper-item><paper-icon-button icon="shopping-cart"></paper-icon-button>purchases</paper-item>
-	</paper-menu>
-</template>
+<div class="right-main">
+<ul class="right-view">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+</div>
 </template>
     <script>
       Polymer({
         is: 'right-view',
 		properties: {
-			query:{
-				type:String,
-				value:'max-width:600px'
-			}
 		}
       });
     </script>
